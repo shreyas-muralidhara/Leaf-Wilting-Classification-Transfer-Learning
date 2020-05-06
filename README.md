@@ -6,7 +6,7 @@ A ResNet50 based model to tackle the multi-class classification problem of detec
 The dataset was provided by Dr. Lobaton at NC State University. The training images capture the condition of the soybean crop at various times of the day with each image and its label being in the range [0,1,2,3,4] with 4 being the highest wilting and 0 denoting the lowest wilting in soybean leaves.
 
 Here is an image that illustrates a single image from each wilting level.
-<IMAGE>
+![Wilting levels demonstration](Wilting_levels.png)
 
 ## Motivation
 
