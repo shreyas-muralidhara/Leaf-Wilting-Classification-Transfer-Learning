@@ -28,6 +28,8 @@ The objective of the project is to build a machine learning classifier that is a
 
 Each image, of dimension 480x640, in the training dataset is read as a grayscale image. The image is flattened and PCA is performed to pick out the pixels that capture the most amount of variance in the image. Top 800 pixels are selected as they capture more than 95% of variance. These 800 length vectors are then passed to a traditional Linear SVM classifier and the accuracy is measured on the stratified validation dataset. The training is done in a class-weighted form since the dataset is highly imbalanced. More details about the approach can be found in the [ProjC1 Report](Reports/ProjC1_Report.pdf).
 
+Crudely removing pixel information by performing PCA on the flattened image leads to information loss. An improvement on the above approach incorporated calculating HoG features on the image followed by a Principal Component Analysis to effectively select globally relevant information from local blocks. These features are then passed to a Linear SVM classifier.
+
 #### Part 2: Transfer Learning
 
 Each RGB image is resized to 224 x 224 dimension and passed to a ResNet50 base model. The top layer is removed and is replaced by 2 fully connected layers to learn domain specific features. The final layer is a 5 neuron layer with softmax activation that outputs the probability of the image being in each class. The class with the maximum probability is selected as the class for the image. The training is done in a class-weighted form since the dataset is highly imbalanced. More details about the approach can be found in the [ProjC2 Report](Reports/ProjC2_Report.pdf).
@@ -36,7 +38,11 @@ Each RGB image is resized to 224 x 224 dimension and passed to a ResNet50 base m
 
 #### Part 1: Traditional Machine Learning
 
-We were able to achieve 79.02% validation accuracy on the stratified validation dataset. The F-1 scores for individual classes were also high. However, the test accuracy achieved was just 20% where the threshold was an accuracy of 50%. The model was improved by approach part 2.
+We were able to achieve 79.02% validation accuracy on the stratified validation dataset. The F-1 scores for individual classes were also high. However, the test accuracy achieved was just 19% where the threshold was an accuracy of 50%. 
+
+The HoF feature vectorization approach achieved a validation accuracy of 84.51% on the stratified validation dataset. The test accuracy slightly improved to 23%.
+
+The model was further improved by following the transfer learning approach.
 
 #### Part 2: Transfer Learning
 
