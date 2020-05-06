@@ -43,3 +43,7 @@ We were able to achieve 79.02% validation accuracy on the stratified validation 
 We were able to achieve 65% validation accuracy on a balanced dataset which properly resembled the balanced test dataset. The test accuracy score achieved was 57% which passed the threshold of 50%.
 
 For the complete details on the approach and the results achieved, kindly take a look at the folder [Reports]().
+
+## Weather Data (Extra Credit)
+
+We were also given a relatively small data in the form of weather conditions noted for some images in the training dataset. We used an ensemble approach to improve upon the accuracy in this extra credit data. For this extra credit portion, we were given the test dataset with the true labels. Firstly, we used a PCA based SVM model to eliminate useless features from the tabular data to achieve 72% test accuracy. Secondly, we built an image-based model which was the ResNet model with best parameters found in Part 2 approach. The image only model achieved a 78% accuracy on the test dataset. Finally, the ensemble model combined the confidence scores from both the image-only and tabular data models to improve and reached a maximum test accuracy of 82%.
