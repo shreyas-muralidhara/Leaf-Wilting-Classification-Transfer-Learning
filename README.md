@@ -42,7 +42,7 @@ We were able to achieve 79.02% validation accuracy on the stratified validation 
 
 We were able to achieve 65% validation accuracy on a balanced dataset which properly resembled the balanced test dataset. The test accuracy score achieved was 57% which passed the threshold of 50%.
 
-For the complete details on the approach and the results achieved, kindly take a look at the folder [Reports](Reports/).
+For a more detailed discussion on the approach and the results achieved, kindly take a look at the folder [Reports](Reports/).
 
 ## Weather Data (Extra Credit)
 
